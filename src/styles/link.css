@@ -1,0 +1,14 @@
+.navbar{
+    position: fixed;
+    bottom: 0;
+    background-color: #284A71;
+    width: 100%;
+    color: white;
+    height: 5%;
+}
+
+.navbar__link{
+    font-size: 1.2em;
+    padding: 16px 16px 16px 16px;
+    
+}

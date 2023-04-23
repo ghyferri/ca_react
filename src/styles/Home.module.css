@@ -5,3 +5,8 @@
 .isNotVisible{
   opacity: 0;
 }
+
+.stationLink{
+  font-size: 20em;
+  color: blue;
+}
