@@ -1,0 +1,15 @@
+.back {
+  font-size: 1.5em;
+  position: absolute;
+  top: 0.5em;
+  left: 1em;
+  color: white;
+}
+.imageuh {
+  bottom: -20px;
+  left: 0px;
+  height: 00px;
+}
+.body {
+  padding: 1em;
+}

@@ -1,0 +1,80 @@
+.card {
+  margin: 1.5em 0em;
+}
+
+article {
+  position: relative;
+  border-radius: 16px;
+  box-shadow: none;
+  background: #fff;
+  transform-origin: center;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  border: black 2px solid;
+}
+
+article a::after {
+  position: absolute;
+  inset-block: 0;
+  inset-inline: 0;
+  cursor: pointer;
+  content: '';
+}
+
+/* basic article elements styling */
+article h2 {
+  margin: 0 0 0px 0;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: 0087c3;
+}
+.address {
+  margin-bottom: 18px;
+}
+figure {
+  margin: 0;
+  padding: 0;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.stationImage {
+  max-width: 100%;
+  transform-origin: center;
+}
+
+.article-body {
+  padding: 16px;
+}
+
+article a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #0087c3;
+}
+
+.articles {
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}

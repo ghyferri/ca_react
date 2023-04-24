@@ -10,7 +10,6 @@ export default function useImage(station) {
     },${station.longitude + 0.0001},${station.latitude + 0.0001}&limit=1`,
     fetcher
   );
-  console.log(data);
   return {
     image: data?.data[0]?.thumb_1024_url,
     isLoading,

@@ -1,11 +1,12 @@
-import useNetwork from "@/data/network";
-import Link from "next/link";
-import "../styles/Home.module.css";
-import { useState, useEffect } from "react";
-import { getDistance } from "@/utils/getDistance";
+import useNetwork from '@/data/network';
+import Link from 'next/link';
+import Card from '@/components/Card';
+import { useState, useEffect } from 'react';
+import { getDistance } from '@/utils/getDistance';
+import Heading from '@/components/Heading';
 
 export default function Home() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState('');
   const [location, setLocation] = useState({});
   const { network, isLoading, isError } = useNetwork();
 
@@ -20,10 +21,10 @@ export default function Home() {
         },
         (error) => {
           console.error(error);
-        }
+        },
       );
     } else {
-      console.error("Geolocation is not supported by this browser.");
+      console.error('Geolocation is not supported by this browser.');
     }
   }, []);
 
@@ -31,7 +32,7 @@ export default function Home() {
   if (isError) return <div>Error</div>;
 
   const stations = network.stations.filter(
-    (station) => station.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0
+    (station) => station.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0,
   );
 
   // map stations to add disrance to current location
@@ -41,7 +42,7 @@ export default function Home() {
         location.latitude,
         location.longitude,
         station.latitude,
-        station.longitude
+        station.longitude,
       ).distance / 1000;
   });
 
@@ -52,22 +53,37 @@ export default function Home() {
   }
 
   return (
-    <div className="list">
-      <input type="text" value={filter} onChange={handleFilterChange} />
-      {stations.slice(0, 10).map((station) => (
-        <div key={station.id}>
-          <Link href={`/stations/${station.id}`}>
-            {station.name}:{" "}
-            {getDistance(
-              location.latitude,
-              location.longitude,
-              station.latitude,
-              station.longitude
-            ).distance / 1000}
-            km
-          </Link>
-        </div>
-      ))}
+    <div>
+      {/* <FontAwesomeIcon icon={faMagnifyingGlass} className="magnify"  /> */}
+      <Heading text={'Choose your station'} />
+      <div className="list">
+        <input
+          type="text"
+          className="searchbar"
+          placeholder={'Search a Velo-station'}
+          value={filter}
+          onChange={handleFilterChange}
+        />
+        {stations.slice(0, 10).map((station) => (
+          <div className="cardLayout" key={station.id}>
+            <Card station={station} location={location}></Card>
+          </div>
+        ))}
+        {stations.slice(0, 0).map((station) => (
+          <div key={station.id}>
+            <Link href={`/stations/${station.id}`}>
+              {station.name}:{' '}
+              {getDistance(
+                location.latitude,
+                location.longitude,
+                station.latitude,
+                station.longitude,
+              ).distance / 1000}
+              km
+            </Link>
+          </div>
+        ))}{' '}
+      </div>
     </div>
   );
 }
