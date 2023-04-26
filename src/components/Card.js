@@ -52,7 +52,7 @@ export default function Card(props) {
                 </p>
                 <p className="number">
                   <FontAwesomeIcon size="xl" className="icon" icon={faRoute} />
-                  {distance}km
+                  {distance} km
                 </p>
               </div>
 

@@ -64,12 +64,12 @@ export default function Home() {
         onChange={handleFilterChange}
       />
       <div className="list">
-        {stations.slice(0, 10).map((station) => (
+        {stations.slice(0, 20).map((station) => (
           <div className="cardLayout" key={station.id}>
             <Card station={station} location={location}></Card>
           </div>
         ))}
-        {stations.slice(0, 0).map((station) => (
+        {/* {stations.slice(0, 0).map((station) => (
           <div key={station.id}>
             <Link href={`/stations/${station.id}`}>
               {station.name}:{' '}
@@ -82,7 +82,7 @@ export default function Home() {
               km
             </Link>
           </div>
-        ))}{' '}
+        ))}{' '} */}
       </div>
     </div>
   );
