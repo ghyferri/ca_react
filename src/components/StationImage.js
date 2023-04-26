@@ -7,5 +7,6 @@ export default function StationImage(props) {
   if (isError) return <div>Error</div>;
   if (!image) return <div>No image</div>;
 
+  // eslint-disable-next-line @next/next/no-img-element
   return <img src={image} alt={props.station.name} />;
 }

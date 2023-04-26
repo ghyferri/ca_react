@@ -16,7 +16,6 @@ export default function Card(props) {
       station.latitude,
       station.longitude,
     ).distance / 100;
-  console.log(station);
 
   function correctName() {
     return station.name.split('-').join(' ');

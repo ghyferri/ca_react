@@ -82,7 +82,7 @@ export default function Home() {
         </div>
       </div>
       <div className="wrap">
-        <button class="button">GO TO THE STATION</button>
+        <button className="button">GO TO THE STATION</button>
       </div>
     </div>
   );
