@@ -91,6 +91,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  background-color: #0087c3;
 }
 
 a {
@@ -101,9 +102,18 @@ a {
 .list {
   padding-left: 1em;
   padding-right: 1em;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+.cardLayout {
+  min-width: 280px;
+  max-width: 600px;
 }
 .searchbar {
-  margin: 1.2em 0em;
+  margin: 1.2em 0em 0em;
+  margin-left: 1em;
   width: 70%;
   max-width: 350px;
   height: 35px;
@@ -127,11 +137,27 @@ input[type='text'] {
 }
 
 @media (min-width: 600px) {
-  /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (min-width: 801px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .list {
+  }
 }
 @media (min-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1600px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 2000px) {
+  .list {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

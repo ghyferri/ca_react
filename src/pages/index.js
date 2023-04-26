@@ -56,14 +56,14 @@ export default function Home() {
     <div>
       {/* <FontAwesomeIcon icon={faMagnifyingGlass} className="magnify"  /> */}
       <Heading text={'Choose your station'} />
+      <input
+        type="text"
+        className="searchbar"
+        placeholder={'Search a Velo-station'}
+        value={filter}
+        onChange={handleFilterChange}
+      />
       <div className="list">
-        <input
-          type="text"
-          className="searchbar"
-          placeholder={'Search a Velo-station'}
-          value={filter}
-          onChange={handleFilterChange}
-        />
         {stations.slice(0, 10).map((station) => (
           <div className="cardLayout" key={station.id}>
             <Card station={station} location={location}></Card>

@@ -1,5 +1,5 @@
 .card {
-  margin: 1.5em 0em;
+  margin: 1em 0em 0em;
 }
 
 article {
@@ -58,7 +58,7 @@ article a {
 .articles {
   display: grid;
   max-width: 1200px;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  /* grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); */
   gap: 24px;
 }
 
@@ -77,4 +77,11 @@ article a {
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 12px;
+}
+
+.icon {
+  margin-right: 0.2em;
+}
+.number {
+  font-size: 1.1em;
 }
