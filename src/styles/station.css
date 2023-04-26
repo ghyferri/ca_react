@@ -1,15 +1,49 @@
-.back {
-  font-size: 1.5em;
-  position: absolute;
-  top: 0.5em;
-  left: 1em;
-  color: white;
-}
 .imageuh {
-  bottom: -20px;
-  left: 0px;
-  height: 00px;
+  position: relative;
+  width: 120%;
+  height: 75vh;
+  top: -1.5vh;
+  z-index: -1;
 }
 .body {
   padding: 1em;
+}
+
+.stationcard {
+  color: white;
+  margin: 0em 1em;
+  font-size: 1.4em;
+}
+
+.whiteboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: white;
+}
+.button {
+  background-color: #284a71; /* Green */
+  border: none;
+  width: 70%;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: thin;
+  display: inline-block;
+  font-size: 1.2em;
+  position: absolute;
+  border-radius: 16px;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.button:hover {
+  background-color: white;
+  color: #284a71;
 }

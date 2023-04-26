@@ -56,7 +56,11 @@ export default function Card(props) {
                 </p>
               </div>
 
-              <Link className="read-more" href={`/stations/${station.id}`}>
+              <Link
+                className="read-more"
+                location={location}
+                href={`/stations/${station.id}`}
+              >
                 Pick station
               </Link>
             </div>

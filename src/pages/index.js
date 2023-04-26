@@ -55,7 +55,7 @@ export default function Home() {
   return (
     <div>
       {/* <FontAwesomeIcon icon={faMagnifyingGlass} className="magnify"  /> */}
-      <Heading text={'Choose your station'} />
+      <Heading showButtn={false} text={'Choose your station'} />
       <input
         type="text"
         className="searchbar"
