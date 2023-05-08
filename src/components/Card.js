@@ -54,14 +54,7 @@ export default function Card(props) {
                   {distance} km
                 </p>
               </div>
-
-              <Link
-                className="read-more"
-                href={{
-                  pathname: `/stations/${station.id}`,
-                  query: { data: JSON.stringify(station) },
-                }}
-              >
+              <Link className="read-more" href={`/stations/${station.id}`}>
                 Pick station
               </Link>
             </div>

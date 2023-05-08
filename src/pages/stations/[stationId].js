@@ -10,17 +10,15 @@ import Heading from '@/components/Heading';
 import useImage from '@/data/image';
 import { getDistance } from '@/utils/getDistance';
 
-export default function Home() {
-  const { isLoading, isError } = useNetwork();
+export default function StationDetail() {
+  const { network, isLoading, isError } = useNetwork();
   const [location, setLocation] = useState({});
   const router = useRouter();
-  let station;
-  try {
-    station = JSON.parse(router.query.data);
-    console.log(station);
-  } catch (error) {
-    console.error('Error parsing JSON:', station);
-  }
+
+  const station = network?.stations.find(
+    (station) => station.id === router.query.stationId,
+  );
+
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -40,9 +38,8 @@ export default function Home() {
   }, []);
 
   const { image } = useImage(station);
-
   if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error</div>;
+  if (isError || !station) return <div>Error</div>;
   if (!image) return <div>No image</div>;
 
   const distance =
