@@ -130,7 +130,11 @@ input[type='text'] {
 .searchbar:focus {
   outline-color: #0087c3;
 }
-
+.arrow {
+  width: 50px;
+  margin: 20px;
+  color: white;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

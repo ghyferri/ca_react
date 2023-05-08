@@ -61,7 +61,7 @@ navigator.geolocation.watchPosition(success, error, options);
 */
 
 /* Source: https://dev.to/orkhanjafarovr/real-compass-on-mobile-browsers-with-javascript-3emi */
-
+import { getDistance } from './getDistance';
 const isIOS = false;
 let compassStarted = false;
 let compassStartedViaClick = false;
@@ -128,7 +128,7 @@ function onChange() {
   }
 }
 
-function pointToLocation(
+export function pointToLocation(
   lat1,
   lon1,
   lat2,

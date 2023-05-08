@@ -40,7 +40,6 @@
 .wrap {
   display: flex;
   justify-content: center;
-  margin-top: 1em;
 }
 
 .button:hover {
