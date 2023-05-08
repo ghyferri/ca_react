@@ -57,8 +57,10 @@ export default function Card(props) {
 
               <Link
                 className="read-more"
-                location={location}
-                href={`/stations/${station.id}`}
+                href={{
+                  pathname: `/stations/${station.id}`,
+                  query: { data: JSON.stringify(station) },
+                }}
               >
                 Pick station
               </Link>
